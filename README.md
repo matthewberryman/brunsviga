@@ -1,5 +1,5 @@
 # brunsviga
-Code for an api for a mechanical computer (Brunsviga 13RK). Wrapper around a human in the loop.
+Code for an api for a mechanical computer (Brunsviga 13RK). Wrapper around a human (or possibly robot) in the loop.
 
 ## Plan
 Just a plan at this stage:
@@ -10,3 +10,4 @@ Just a plan at this stage:
 
 Thoughts:
 * How to deal with tracking and returning requests (DynamoDB?).
+* Could build a robot to work inputs and turn knob, plus OCR for readout.
