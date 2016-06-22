@@ -11,3 +11,7 @@ Just a plan at this stage:
 Thoughts:
 * How to deal with tracking and returning requests (DynamoDB?).
 * Could build a robot to work inputs and turn knob, plus OCR for readout.
+
+## Images
+![Brunsviga 13RK](Brunsviga13RK.jpg "Brunsviga 13RK")
+![me operating my Brunsviga 13RK](man_and_machine.jpg "Me and my Brunsviga13RK")
