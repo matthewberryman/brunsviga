@@ -1,8 +1,8 @@
 # brunsviga
-Code for an api for a mechanical computer (Brunsviga 13RK). Wrapper around a human (or possibly robot) in the loop.
+Code for an API for a mechanical computer (Brunsviga 13RK). Wrapper around a human (or possibly robot) in the loop.
 
 ## beta
-To access the current beta as described in ##Implementation] please email mattjb ät me dot com for the web urls: human friendly form and the underlying web API url. Note that I generally keep the Brunsviga 13RK at work, and I have a life outside of work, so don't expect a response to a web request after (Australian Eastern Standard/Daylight Time) work hours.
+To access the current beta as described in the Implementation section below, please email mattjb ät me dot com for the web urls: human friendly form and the underlying web API url. Note that I generally keep the Brunsviga 13RK at work, and I have a life outside of work, so don't expect a response to a web request after (Australian Eastern Standard/Daylight Time) work hours.
 
 ## Plan
 Here's the overall plan
