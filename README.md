@@ -16,7 +16,7 @@ Here's the overall plan
 Note: I have removed my specific ID numbers and urls from files referenced, you would need to complete those before using.
 
 1. Define an SNS topic, and subscribe the human operator's email address to that email.
-2. Define a lambda function as per [lambda/index.js](lambda/index.js), and give it the lambda_basic_execution role. Then in AWS IAM edit that role and attach a policy as per [lambda/publish_brunsviga_sns_policy.json](lambda/publish_brunsviga_sns_policy.json) to allow the lambda function to publish to the SNS topic. The lambda function takes json from an http POST request of the form `{"request": "function_to_evaluate", "email": "email_address_to_send_result_to"}`
+2. Define a lambda function as per [lambda/index.js](lambda/index.js), and give it the lambda_basic_execution role. Then in AWS IAM edit that role and attach a policy as per [lambda/publish_brunsviga_sns_policy.json](lambda/publish_brunsviga_sns_policy.json) to allow the lambda function to publish to the SNS topic. The lambda function takes json from an http POST request of the (stringified) form `{"request": "function_to_evaluate", "email": "email_address_to_send_result_to"}`
 3. Set up a POST API in API Gateway to call the lambda function either through the console
 ![API Gateway](images/api_gateway_setup.png)
 or by importing [swagger+api json](api/swagger+api.json). Make sure you enable CORS as appropriate for the hostname where your human-friendly web form will live, and make sure you deploy the API to prod.
