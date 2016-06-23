@@ -8,7 +8,7 @@ To access the current beta as described in the Implementation section below, ple
 Here's the overall plan
 - [x] Provide human-friendly web form for submitting requests.
 - [ ] Sanity check human input.
-- [x] Use AWS gateway service to provide a REST API.
+- [x] Use AWS API gateway service to provide a REST API.
 - [x] Trigger an AWS lambda function that sends JSON via AWS SNS of operation to be run by a human.
 - [x] create s3 bucket for human operator to upload videos of calculations to (using iPhone with [Transmit-iOS](https://panic.com/transmit-ios/) app), then video link is to be emailed to requestor.
 
