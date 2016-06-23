@@ -1,0 +1,41 @@
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+</head>
+<body>
+<form id="myForm" action="api_url" method="post">
+    Request (e.g. 3+4, 5-3, note 10 decimal digit max for two input numbers): <input type="text" id="request" request="" /><br />
+    Your email address: <input type="text" id="email" email=""></textarea><br />
+    <input type="submit" value="Submit request" />
+</form>
+
+<script type='text/javascript'>
+
+    /* attach a submit handler to the form */
+    $("#myForm").submit(function(event) {
+
+      /* stop form from submitting normally */
+      event.preventDefault();
+
+      /* get the action attribute from the <form action=""> element */
+
+      $.ajax({
+           type: "POST",
+           url: "api_url" ,
+           dataType: "json",
+           contentType: "application/json",
+           success: function (msg) {
+               if (msg) {
+                   alert("Request submitted! Expect an email within a couple of days.");
+                   location.reload(true);
+               } else {
+                   alert("Cannot add to list !");
+               }
+           },
+
+           data: JSON.stringify({request: $('#request').val() , email: $('#email').val() })
+       });
+    });
+</script>
+</body>
+</html>
