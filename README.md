@@ -22,7 +22,10 @@ Note: I have removed my specific ID numbers and urls from files referenced, you 
 2. Define a lambda function as per [lambda/index.js](lambda/index.js), and give it the lambda_basic_execution role. Then in AWS IAM edit that role and attach a policy as per [lambda/publish_brunsviga_sns_policy.json](lambda/publish_brunsviga_sns_policy.json) to allow the lambda function to publish to the SNS topic. The lambda function takes json from an http POST request of the (stringified) form `{"request": "function_to_evaluate", "email": "email_address_to_send_result_to"}`
 3. Set up a POST API in API Gateway to call the lambda function either through the console
 ![API Gateway](images/api_gateway_setup.png)<br />
-or by importing [swagger+api json](api/swagger+api.json). Make sure you enable CORS as appropriate for the hostname where your human-friendly web form will live, and make sure you deploy the API to prod.
+or by importing [swagger+api json](api/swagger+api.json). Make sure you enable CORS as appropriate for the hostname where your human-friendly web form will live, and make sure you deploy the API to prod. Once that's done you can test the API from the command line, e.g.
+```shell
+curl --data "{\"request\": \"5435*23\", \"email\": \"email_address_to_send_result_to\"}" https://api_id.execute-api.us-west-2.amazonaws.com/prod/sendBrunsvigaRequest
+```
 4. Set up an s3 bucket (bucket policy to be world readable for holding [human-friendly web form](index.html) as well as results. Note you can't use s3 static web site hosting as it doesn't support https, either you need to look directly at the object url for index.html or use cloudfront or put it on some other https-enabled service.
 
 ## First calculation run
