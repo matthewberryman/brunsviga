@@ -12,6 +12,7 @@ Here's the overall plan
 - [x] Trigger an AWS lambda function that sends JSON via AWS SNS of operation to be run by a human.
 - [x] create s3 bucket for human operator to upload videos of calculations to (using iPhone with [Transmit-iOS](https://panic.com/transmit-ios/) app),
 - [ ] optionally look at AWS Elastic Transcoder and AWS CloudFront to minimise video buffering,
+
 then video link is emailed to requestor.
 
 ## Implementation
