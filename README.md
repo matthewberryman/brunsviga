@@ -10,7 +10,9 @@ Here's the overall plan
 - [ ] Sanity check human input.
 - [x] Use AWS API gateway service to provide a REST API.
 - [x] Trigger an AWS lambda function that sends JSON via AWS SNS of operation to be run by a human.
-- [x] create s3 bucket for human operator to upload videos of calculations to (using iPhone with [Transmit-iOS](https://panic.com/transmit-ios/) app), then video link is to be emailed to requestor.
+- [x] create s3 bucket for human operator to upload videos of calculations to (using iPhone with [Transmit-iOS](https://panic.com/transmit-ios/) app),
+- [ ] (optional) look at AWS Elastic Transcoder and AWS CloudFront to minimise video buffering,
+then video link is emailed to requestor.
 
 ## Implementation
 Note: I have removed my specific ID numbers and urls from files referenced, you would need to complete those before using.
