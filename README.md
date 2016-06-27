@@ -30,8 +30,8 @@ curl --data "{\"request\": \"5435*23\", \"email\": \"email_address_to_send_resul
 
 ## First calculation run
 ![First request as received by human operator](images/first_request.png "First request as received by human operator")
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/pvgsz3y1V50" frameborder="0" allowfullscreen></iframe>
+Video:
+![Video of calculation](https://img.youtube.com/vi/pvgsz3y1V50/0.jpg)](http://www.youtube.com/watch?v=pvgsz3y1V50 "Web accessible Brunsviga 13RK")
 
 ## Future ideas
 * How to deal with tracking and returning requests (use DynamoDB?).
