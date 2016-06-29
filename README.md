@@ -1,8 +1,8 @@
 # brunsviga
 Code for an API for a mechanical computer (Brunsviga 13RK). Wrapper around a human (or possibly robot) in the loop.
 
-## beta
-To access the current beta as described in the Implementation section below, please email mattjb ät me dot com for the web urls: human friendly form and the underlying web API url. Note that I generally keep the Brunsviga 13RK at work, and I have a life outside of work, so don't expect a response to a web request after (Australian Eastern Standard/Daylight Time) work hours.
+## Access
+To access the brunsviga as described in the Implementation section below, please check out [brunsviga.io](https://brunsviga.io). Note that I generally keep the Brunsviga 13RK at work, and I have a life outside of work, so don't expect a response to a web request after (Australian Eastern Standard/Daylight Time) work hours.
 
 ## Plan
 Here's the overall plan
@@ -11,7 +11,7 @@ Here's the overall plan
 - [x] Use AWS API gateway service to provide a REST API.
 - [x] Trigger an AWS lambda function that sends JSON via AWS SNS of operation to be run by a human.
 - [x] create s3 bucket for human operator to upload videos of calculations to (using iPhone with [Transmit-iOS](https://panic.com/transmit-ios/) app),
-- [ ] optionally look at AWS Elastic Transcoder and AWS CloudFront to minimise video buffering,
+- [X] convert videos to mp4 and then upload, using AWS CloudFront to serve content for faster access. To do: look at AWS Elastic Transcoder for conversion (instead of Photos app on OS X).
 
 then video link is emailed to requestor.
 
