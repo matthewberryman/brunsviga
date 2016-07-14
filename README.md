@@ -1,6 +1,9 @@
 # brunsviga
 Code for an API for a mechanical computer (Brunsviga 13RK). Wrapper around a human (or possibly robot) in the loop.
 
+## LICENSE
+Licensed under [GPLv3 licence](LICENCE) except for bootstrap and jquery components licensed under the [MIT licence](LICENCE.bootstrap).
+
 ## Access
 To access the brunsviga as described in the Implementation section below, please check out [brunsviga.io](https://brunsviga.io). Note that I generally keep the Brunsviga 13RK at work, and I have a life outside of work, so don't expect a response to a web request after (Australian Eastern Standard/Daylight Time) work hours.
 
