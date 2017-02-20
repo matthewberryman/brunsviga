@@ -18,7 +18,7 @@ Here's the overall plan
 
 then video link is emailed to requestor.
 
-## Implementation
+## Deployment
 Note: I have removed my specific ID numbers and urls from files referenced, you would need to complete those before using.
 
 1. Define an SNS topic, and subscribe the human operator's email address to that email.
