@@ -30,7 +30,7 @@ provider:
     - Effect: "Allow"
       Action: "sns:Publish"
       Resource:
-        - 'Fn::Join':
+        Fn::Join:
           - ':'
           -
             - 'arn:aws:sns'
@@ -43,7 +43,7 @@ functions:
     handler: sendBrunsvigaRequest.handler
     environment:
       TOPIC_ARN:
-        - 'Fn::Join':
+        Fn::Join:
           - ':'
           -
             - 'arn:aws:sns'
