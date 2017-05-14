@@ -21,17 +21,18 @@ exports.handler = function(event, context, callback) {
             body: JSON.stringify({ "message": "Server error " + err.stack })
           };
           callback(null, response);
+        } else {
+          console.log(event);
+          const response = {
+            statusCode: 200,
+            headers: {
+              "Access-Control-Allow-Origin" : "*", // Required for CORS support to work
+              "Access-Control-Allow-Credentials" : true // Required for cookies, authorization headers with HTTPS
+            },
+            body: JSON.stringify({ "message": "Request submitted! Expect an email within a couple of days." })
+          };
+          callback(null, response);
         }
-        console.log(event);
-        const response = {
-          statusCode: 200,
-          headers: {
-            "Access-Control-Allow-Origin" : "*", // Required for CORS support to work
-            "Access-Control-Allow-Credentials" : true // Required for cookies, authorization headers with HTTPS
-          },
-          body: JSON.stringify({ "message": "Request submitted! Expect an email within a couple of days." })
-        };
-        callback(null, response);
     });
 
 };
