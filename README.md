@@ -1,6 +1,8 @@
 # brunsviga
 Code for an API for a mechanical computer (Brunsviga 13RK). Wrapper around a human (or possibly robot) in the loop.
 
+[Travis CI](https://travis-ci.org/matthewberryman/brunsviga): [![Build Status](https://travis-ci.org/matthewberryman/brunsviga.svg?branch=master)](https://travis-ci.org/matthewberryman/brunsviga)
+
 ## LICENSE
 Licensed under [GPLv3 licence](LICENCE) except for bootstrap and jquery components licensed under the [MIT licence](LICENCE.bootstrap).
 
