@@ -9,5 +9,5 @@ before_install:
   - pip install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
 script:
-  - cd $TRAVIS_BUILD_DIR/api && serverless deploy && cd ..
+  - cd $TRAVIS_BUILD_DIR/api && serverless deploy --aws-s3-accelerate && cd ..
   - aws s3 cp $TRAVIS_BUILD_DIR/web s3://brunsviga/ --recursive
