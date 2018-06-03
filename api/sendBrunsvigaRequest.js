@@ -9,7 +9,8 @@ const valid = function(expression) {
   return operators.test(expression) &&  // must have an operator
     expression.split(operators).length === 2 && // must have two operands
     expression.split(operators)[0].length <= 10 && /\d+/.test(expression.split(operators)[0]) && // operands must be numbers of length < 10
-    expression.split(operators)[1].length <= 10 && /\d+/.test(expression.split(operators)[1]);
+    expression.split(operators)[1].length <= 10 && /\d+/.test(expression.split(operators)[1]) &&
+    Number(expression.split(operators)[1]) !== 0; // can't divide by 0
 
 }
 
