@@ -14,26 +14,28 @@ const valid = function(expression) {
 
 }
 
-exports.handler = function(event, context, callback) {
+exports.handler = async function(event, context, callback) {
   console.log("\n\nLoading handler\n\n");
   var sns = new AWS.SNS();
   var requestBody = JSON.parse(event.body);
   if (valid(requestBody.expression)) {
-    sns.publish({
-      Message: 'Send result of ' + requestBody.expression + ' to ' + requestBody.email,
-      TopicArn: process.env.TOPIC_ARN
-    }).promise().then(function(data) {
-      console.log(event);
+    try {
+      const data = await sns.publish({
+        Message: 'Send result of ' + requestBody.expression + ' to ' + requestBody.email,
+        TopicArn: process.env.TOPIC_ARN
+      }).promise();
+      console.log(data);
       const response = {
         statusCode: 200,
         headers: {
-          "Access-Control-Allow-Origin" : "*", // Required for CORS support to work
-          "Access-Control-Allow-Credentials" : true // Required for cookies, authorization headers with HTTPS
+          "Access-Control-Allow-Origin": "*", // Required for CORS support to work
+          "Access-Control-Allow-Credentials": true // Required for cookies, authorization headers with HTTPS
         },
         body: JSON.stringify({ "message": "Request submitted! Expect an email within a couple of days." })
       };
       callback(null, response);
-    }).catch(function(err) {
+    }
+    catch (err) {
       console.log(err.stack);
       const response = {
         statusCode: 503,
@@ -44,7 +46,7 @@ exports.handler = function(event, context, callback) {
         body: JSON.stringify({ "message": "Server error " + err.stack })
       };
       callback(null, response);
-    });
+    }
   } else {
     const response = {
       statusCode: 400,
