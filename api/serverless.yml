@@ -19,7 +19,8 @@ service: brunsviga # NOTE: update this with your service name
 
 provider:
   name: aws
-  runtime: nodejs16.x
+  runtime: nodejs20.x
+  profile: atc
   architecture: arm64
   versionFunctions: false
 
